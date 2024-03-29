@@ -1,0 +1,33 @@
+namespace As
+{
+    internal class FurkanınAdı
+    {
+        int sayi = 1;
+        static void Main(string[] args)
+        {
+            String valu;
+            Console.Write("write your name and enter: ");
+            valu = Console.ReadLine();
+
+            Console.WriteLine("your name is {0} ", valu);
+            String upperhali = String.Format("buyuk hali : {0}", valu.ToUpper());
+            String lowerhali = String.Format("kucuk hali : {0}", valu.ToLower());
+            String subhali = String.Format("trim hali : {0}", valu.Trim());
+            String trimhali = String.Format("subs hali : {0}", valu.Substring(0, 5));
+
+
+
+            Console.WriteLine(upperhali);
+            Console.WriteLine(lowerhali);
+            Console.WriteLine(subhali);
+            Console.WriteLine(trimhali);
+
+
+
+            Console.ReadLine();
+
+
+        }
+
+    }
+}
