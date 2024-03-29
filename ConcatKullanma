@@ -1,0 +1,26 @@
+namespace As
+{
+    internal class FurkanınAdı
+    {
+        static void Main(string[] args)
+        {
+            String str;
+            String  ara;
+            
+            Console.Write("Enter your name: ");
+            str = Console.ReadLine();
+            Console.Write("Enter surname: ");
+            ara = Console.ReadLine();
+            String an = string.Concat(str, "  ", ara);
+            Console.WriteLine(an);
+            Console.ReadLine();
+
+
+
+
+        
+
+        }
+
+    }
+}
