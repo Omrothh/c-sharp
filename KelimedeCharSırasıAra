@@ -1,0 +1,25 @@
+namespace As
+{
+    internal class FurkanınAdı
+    {
+        static void Main(string[] args)
+        {
+            String str;
+            char ara;
+            
+            Console.Write("Enter a string here: ");
+            str = Console.ReadLine();
+            Console.Write("Enter the character to search: ");
+            ara = Console.ReadLine()[0];
+            int an = str.IndexOf(ara);
+            Console.Write(an);
+
+
+
+
+        
+
+        }
+
+    }
+}
