@@ -1,0 +1,51 @@
+namespace As
+{
+    internal class FurkanınAdı
+    {
+        const string avru = "23.09.2000";
+        const string amer = "09.23.2000";
+
+        static void Main(string[] args)
+        {
+            AnanZaa();
+            NeYazsam("ben");
+            Console.Read();
+
+
+        
+
+        }
+        public static void AnanZaa()
+        {
+            String str;
+            String ara;
+            String tak;
+            float aa = 13.7f;
+
+            Console.Write("Enter your name: ");
+            str = Console.ReadLine();
+            Console.Write("Enter surname: ");
+            ara = Console.ReadLine();
+            String an = string.Concat(str, "  ", ara);
+            Console.WriteLine(an);
+            Console.Write("Hangi takvimi kullanıyorsunuz? ");
+            tak = Console.ReadLine();
+            if (tak == "avrupa")
+            {
+                Console.WriteLine(avru);
+
+
+            }
+            else
+            {
+                Console.WriteLine(amer);
+
+            }
+        }
+        public static void NeYazsam(string ne)
+        {
+            Console.WriteLine(ne);
+        }
+
+    }
+}
