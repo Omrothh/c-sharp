@@ -1,0 +1,36 @@
+namespace Devam
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("sayı gir!");
+            String sayi = Console.ReadLine();
+
+            try
+            {
+
+                int yenisayi = int.Parse(sayi);
+
+                Console.WriteLine(yenisayi);
+
+            }
+            catch(FormatException)
+            {
+                // format yanlıs tip girilen input için
+                Console.WriteLine("Wrong type of input");
+
+            }
+            catch (OverflowException)
+            {
+                // overflow int sayı limitini aştığı için
+                Console.WriteLine("number was too long for int32");
+            }
+            catch (ArgumentNullException)
+            {
+                // boş oldugu için
+                Console.WriteLine("its empty");
+            }
+        }
+    }
+}
