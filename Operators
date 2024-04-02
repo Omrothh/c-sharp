@@ -1,0 +1,30 @@
+namespace Devam
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int num1 = 15;
+            int num2 = 12;
+            int num3;
+            //unary oparator
+            num3 = -num2;
+            Console.WriteLine("num3 is {0}",  num3 );
+
+            bool sunny = true;
+            Console.WriteLine("is it sunny {0}", !sunny );
+
+            //increment operator
+            int num = 30;
+            num++;
+            Console.WriteLine(num);
+            Console.WriteLine(num--);//bir sonrakini azalttı
+            Console.WriteLine(num++);//birsonrakini arttırdı
+            Console.WriteLine(--num);//kendi içindekini azalttı
+
+
+
+
+        }
+    }
+}
