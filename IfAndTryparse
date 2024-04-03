@@ -1,0 +1,22 @@
+sing System.Timers;
+
+namespace Devam
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine( "derece gir: ");
+            string derece= Console.ReadLine();
+            int temp;
+            if(int.TryParse(derece, out temp) )
+            {
+                Console.WriteLine("dogru grdin");
+            } else
+            {
+                Console.WriteLine("olmadı");
+            }
+        }
+      
+    }
+}
