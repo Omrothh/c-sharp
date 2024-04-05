@@ -1,0 +1,40 @@
+using System.Timers;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace Devam
+{
+    internal class Program
+    {
+        static string username, password;
+        static void Main(string[] args)
+        {
+            register();
+            login();
+            Console.Read();
+        }
+        public static void register()
+        {
+            Console.WriteLine("enter your username");
+            username = Console.ReadLine();
+            Console.WriteLine("enter your password");
+            password = Console.ReadLine();
+            Console.WriteLine("registiration complete....");
+
+        }
+        public static void login()
+        {
+            Console.WriteLine("enter your username");
+            if ( username == Console.ReadLine())
+            {
+                if ( password == Console.ReadLine())
+                {
+                    Console.WriteLine("you have succesfully logged in");
+                }
+            }
+            else { Console.WriteLine("wrong username or password");
+
+                    }
+        }
+      
+    }
+}
