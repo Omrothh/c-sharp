@@ -1,0 +1,26 @@
+using System.Timers;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace Devam
+{
+    internal class Program
+    {
+        static string username, password;
+        static void Main(string[] args)
+        {
+            Console.WriteLine("enter your age: ");
+            string yasi = Console.ReadLine();
+            int yas = int.Parse(yasi);
+            switch (yas)
+            {
+              case <18: Console.WriteLine("too young");
+                    break;
+                    case >18: Console.WriteLine("your good to go");
+                    break;
+                    default: Console.WriteLine("enter a valid age!");
+                    break;
+            }
+        }
+        
+    }
+}
