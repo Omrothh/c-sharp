@@ -1,0 +1,3 @@
+int temepture = 5
+string statement;
+statement = tempeture < 0 ? "ekside" : "artıda";
