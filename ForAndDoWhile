@@ -1,0 +1,35 @@
+using System.Timers;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace Devam
+{
+    internal class Program
+    {
+
+        static void Main(string[] args)
+        {
+            for(int i = 0; i < 20; i++)
+            {
+                if(i % 2 == 1 ) {
+                    Console.WriteLine( i);
+                }
+                
+            }
+            int lenght = 0;
+            do {
+                Console.WriteLine("enter text:");
+                string leng = Console.ReadLine();
+                lenght = leng.Length;
+                Console.WriteLine("its lentgh is "+ lenght);
+
+            } while( lenght < 20 );
+            Console.WriteLine("thnaks but that was more than 20 character");
+
+        }
+
+        }
+       
+        }
+        
+    
+
