@@ -1,0 +1,52 @@
+using System.Timers;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace Devam
+{
+    internal class Program
+    {
+
+        static void Main(string[] args)
+        {
+            int puan;
+            int toppuan = 0;
+            int ort;
+            int OgrenciSayisi = 0;
+            while (true)
+            {
+                Console.WriteLine(OgrenciSayisi +". öğrencinin puanını giriniz: ");
+                string pu = Console.ReadLine();
+                
+                if (int.TryParse(pu, out puan))
+                {
+                    puan = int.Parse(pu);
+                    if (puan == -1)
+                    {
+                        ort = toppuan / OgrenciSayisi;
+                        Console.WriteLine("Toplam puan ortalaması: " + ort);
+                        break;
+                    }
+                    else if (puan >= 0 && puan <= 20)
+                    {
+                        toppuan = puan + toppuan;
+                        OgrenciSayisi++;
+
+                    }
+                    else { Console.WriteLine("lütfen 0 ile 20 arası yası giriniz."); }
+
+                }
+                else {
+                    Console.WriteLine("yanlış girdiniz sayı gir.");
+                    break;
+                }
+
+            }
+
+        }
+    }
+}
+
+
+
+
+
