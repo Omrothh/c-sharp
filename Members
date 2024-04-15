@@ -1,0 +1,70 @@
+namespace yenidevam
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Members uye = new Members();
+            uye.Introducing(true);
+            Console.ReadKey();
+        }
+    }
+}
+
+
+
+
+------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace yenidevam
+{
+    internal class Members
+    {
+        private string jobtitle;
+        private string memberName;
+        private int salary;
+        public int age;
+
+        public String JobTitle {
+            get 
+            {
+                return jobtitle;
+            }
+            set 
+            {
+                jobtitle = value;
+            }
+        }
+        public void Introducing(bool isFriend)
+        {
+            if (isFriend)
+            {
+                SharingInfo();
+            }
+            else
+            {
+                Console.WriteLine("Yo, whats popping?, my name is {0}, my job is {1}, and I'm {2} years old.", memberName, jobtitle, age);
+            }
+
+        }
+        private void SharingInfo()
+        {
+            Console.WriteLine("my salary is shitty, I wanna die, it's" + salary);
+        } 
+        public Members()
+        {
+            age = 31;
+            memberName = "forukan";
+            jobtitle = "a shitty programmer";
+            salary = 18000;
+        }
+
+        ~Members() {
+            Console.WriteLine("I WİLL FİNALİZE THİS BULLSHİT RİGHT NOW"); }
+    }
+}
