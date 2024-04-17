@@ -1,0 +1,32 @@
+namespace yenidevam
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int[] gumusAilesi = new int[10];
+            for (int i = 0;i <10; i++) 
+            {
+                gumusAilesi[i] = i+10;
+            }
+            for (int j = 0; j < 10; j++)
+            {
+                Console.WriteLine("şu kadarcı sayı {0} = {1}", j, gumusAilesi[j] );
+            }
+            int say = 0;
+            foreach(int a in gumusAilesi)
+            {
+                Console.WriteLine("şu kadarcı sayı {0} = {1}", say, a); say++;
+            }
+            string[] dostlar = { "furkan", "adnan", "raşit", "kadir", "yarak" };
+            foreach (string a in dostlar)
+            {
+                Console.WriteLine( "{0} selam kanka", a);
+            }
+
+
+
+        }
+    }
+}
