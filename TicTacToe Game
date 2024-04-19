@@ -1,0 +1,156 @@
+using System.Threading.Channels;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static char[,] play =
+        {
+            {'1','2','3'},
+            {'4','5','6'},
+            {'7','8','9'}
+
+        };
+        static char[,] playReset =
+       {
+            {'1','2','3'},
+            {'4','5','6'},
+            {'7','8','9'}
+
+        };
+
+        static void Main(string[] args)
+        {
+            int player = 2;
+            int input = 0;
+            bool Correct = true;
+
+            do
+            {
+
+                if (player == 2)
+                {
+                    player = 1;
+                    PlayerXorO(player, input);
+                }
+                else if (player == 1)
+                {
+                    player = 2; 
+                    PlayerXorO(player, input);
+                }
+                setField();
+
+                #region
+                char[] playerChars = { 'X', 'O' };
+                foreach(char playerChar in playerChars)
+                {
+                    if ((play[0,0] == playerChar)  && (play[0,1] == playerChar) && (play[0,2] == playerChar) ||
+                      (play[1, 0] == playerChar) && (play[1, 1] == playerChar) && (play[1, 2] == playerChar) ||
+                      (play[2, 0] == playerChar) && (play[2, 1] == playerChar) && (play[2, 2] == playerChar) ||
+                      (play[0, 0] == playerChar) && (play[1, 0] == playerChar) && (play[2, 0] == playerChar) ||
+                      (play[1, 1] == playerChar) && (play[2, 1] == playerChar) && (play[0, 1] == playerChar) ||
+                      (play[0, 2] == playerChar) && (play[1, 2] == playerChar) && (play[2, 2] == playerChar))
+                    {
+                        if (playerChar == 'X')
+                        {
+
+                            Console.WriteLine(" X sen kazandın amk cocu");
+                        } else { Console.WriteLine("O SEN KAZANDIN"); }
+                        resetgame();
+                    }
+                }
+
+
+
+                #endregion
+
+                #region
+
+                do
+                {
+                    Console.WriteLine("\nPlayer {0} enter your field:: ", player);
+                    try
+                    {
+                        input = Convert.ToInt32(Console.ReadLine());
+
+
+                    } catch
+                    {
+                        Console.WriteLine("enter a number!!!");
+                    }
+                    if((input ==1) && (play[0,0]) == '1')
+                        Correct = true;
+                    else if ((input == 2) && (play[0, 1]) == '2')
+                        Correct = true;
+                    else if ((input == 3) && (play[0, 2]) == '3')
+                        Correct = true;
+                    else if ((input == 4) && (play[1, 0]) == '4')
+                        Correct = true;
+                    else if ((input == 5) && (play[1, 1]) == '5')
+                        Correct = true;
+                    else if ((input == 6) && (play[1, 2]) == '6')
+                        Correct = true;
+                    else if ((input == 7) && (play[2, 0]) == '7')
+                        Correct = true;
+                    else if ((input == 8) && (play[2, 1]) == '8')
+                        Correct = true;
+                    else if ((input == 9) && (play[2, 2]) == '9')
+                        Correct = true;
+                    else { 
+                        Console.WriteLine("yanlıs girdin oc sayı gir");
+                        Correct = false;
+                    }
+
+
+                } while (!Correct);
+
+
+            } while (true);
+        }
+        #endregion
+
+        public static void PlayerXorO(int player, int input)
+        {
+            char playerSign = ' ';
+            if (player == 1) 
+            {
+                playerSign = 'X';
+            } else if (player == 2) { playerSign = 'O'; }
+            switch (input)
+            {
+                case 1: play[0,0] = playerSign; break;
+                case 2: play[0, 1] = playerSign; break;
+                case 3: play[0, 2] = playerSign; break;
+                case 4: play[1, 0] = playerSign; break;
+                case 5: play[1, 1] = playerSign; break;
+                case 6: play[1, 2] = playerSign; break;
+                case 7: play[2, 0] = playerSign; break;
+                case 8: play[2, 1] = playerSign; break;
+                case 9: play[2, 2] = playerSign; break;
+
+
+
+            }
+        }
+        public static void resetgame()
+        {
+            play = playReset;
+            setField();
+        }
+        public static void setField()
+            {
+                Console.WriteLine("     |      |      |");
+                Console.WriteLine("   {0} |   {1}  |  {2}   |", play[0, 0], play[0, 1], play[0, 2]);
+                Console.WriteLine("_____|______|______|");
+                Console.WriteLine("     |      |      |");
+                Console.WriteLine("   {0} |   {1}  |  {2}   |", play[1, 0], play[1, 1], play[1, 2]);
+                Console.WriteLine("_____|______|______|");
+                Console.WriteLine("     |      |      |");
+                Console.WriteLine("   {0} |   {1}  |  {2}   |", play[2, 0], play[2, 1], play[2, 2]);
+                Console.WriteLine("_____|______|______|");
+
+
+
+            }
+        }
+    } 
